@@ -8,5 +8,15 @@ import mutations from './mutations';
 Vue.use(Vuex);
 
 const state = {
-	
+    a:{
+        name: 'hello'
+    },
+    b:{}
 }
+
+export default new Vuex.Store({
+    state,
+    getters,
+    mutations,
+    actions
+})

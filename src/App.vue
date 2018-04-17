@@ -1,21 +1,24 @@
 <template>
   <div id="app">
-    <headerComponent title="aaa"></headerComponent>
+    <parent></parent>
+    <div v-html="count"></div>
   </div>
 </template>
 
 <script>
-import headerComponent from './components/header.vue';
+import { mapState } from 'vuex';
 export default {
   name: 'app',
-  data () {
+  data() {
     return {
       msg: 'Welcome to Your Vue.js App'
     }
   },
-  components:{
-    headerComponent
-  }
+  computed: mapState({
+    count(state) {
+      return state.a.name;
+    }
+  })
 }
 </script>
 
@@ -28,7 +31,8 @@ export default {
   color: #2c3e50;
 }
 
-h1, h2 {
+h1,
+h2 {
   font-weight: normal;
 }
 
